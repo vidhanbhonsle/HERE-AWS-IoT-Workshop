@@ -22,14 +22,15 @@
         var defaultLayers = platform.createDefaultLayers();
 
         // Get your current position from wego.here.com
-        var myPosition = {lat: 12.95677, lng: 77.73164};
+        var myPosition = {lat: 12.9716, lng: 77.5946};
+        console.log(myPosition);
 
         // Instantiate (and display) a map object:
         var map = new H.Map(
             document.getElementById('mapContainer'),
             defaultLayers.vector.normal.map,
             {
-                zoom: 11,
+                zoom: 15,
                 center: myPosition
             });
 
@@ -40,10 +41,11 @@
         var homeIcon = new H.map.Icon('/static/home.png');
       
       var refreshDt = latlng => {
-        //uri = "https://image.maps.ls.hereapi.com/mia/1.6/mapview?apiKey=eJtOWcz0rG2MovFXxmEZOBji86azNK035at5rNDx5xg&poi="+latlng+"&w="+1300+"&h="+600+"&z="+16
-        //$('#mapContainer').attr('src', uri)
-        console.log(latlng);
-        let marker = new H.map.Marker(latlng,{icon:homeIcon});
+        //console.log(latlng);
+        var values = latlng.split(',');
+        //console.log(values[0]);
+        //console.log(values[1]);
+        let marker = new H.map.Marker({lat: values[0], lng: values[1]},{icon:homeIcon});
         map.addObject(marker);
       };
 

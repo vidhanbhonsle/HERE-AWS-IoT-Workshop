@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>IoT User Dashboard</h1>
+    <img id="mapImage" />
+    <script>
+      var refreshDt = latlng => {
+        uri = "https://image.maps.ls.hereapi.com/mia/1.6/mapview?apiKey=eJtOWcz0rG2MovFXxmEZOBji86azNK035at5rNDx5xg&poi="+latlng+"&w="+1300+"&h="+600+"&z="+16
+        $('#mapImage').attr('src', uri)
+      };
+
+      var refreshDtsct = _ => {
+        uri = "http://127.0.0.1:5000/getlatlng"
+        $.ajax({
+          async: true,
+          method: 'get',
+          url: uri,
+          success: (res, status, data) => {
+            refreshDt(res)
+          },
+          error: (res, status, data) => { "err",console.log(res) }
+        });
+      };
+	  refreshDtsct();
+      setInterval(_ => {
+        refreshDtsct()
+      }, 5000);
+    </script>
+  </body>
+</html>

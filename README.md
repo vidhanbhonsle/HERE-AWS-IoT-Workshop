@@ -17,6 +17,13 @@ Ever wondered on how we can add AI when it comes to location based services? In 
 
 ### Step 1: Create a Thing on AWS IoT
 
+Create a thing and download the certificates and keys required for Authentication and Autorization.
+
+- xxxx.cert.pem
+- xxxx.private.key
+- xxxx.public.key
+- root-CA.crt
+
 ### Step 2: Create a Publisher code
 
 Check geocode_data_publish.py file

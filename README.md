@@ -39,5 +39,27 @@ install following Python library -
 - pip install Flask-MQTT
 - pip install Flask
 
+### Step 4: Running the code
+
+Open two different terminals or command prompt 
+
+- python geocode_data_publish.py
+- python flaskserver.py
+
+### Resources
+
+Following are the resources -
+
+- Documentation
+    - https://developer.here.com/documentation
+
+- Tutorials
+    - https://developer.here.com/tutorials
+
+- Blogs 
+    - https://developer.here.com/blog
+
+- Github
+    - https://github.com/heremaps 
 
 

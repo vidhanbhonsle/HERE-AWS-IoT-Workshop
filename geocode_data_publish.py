@@ -9,8 +9,6 @@ from random import uniform
 
 connflag = False
 
-#print(ssl.OPENSSL_VERSION)
-
 def on_connect(client, userdata, flags, rc):
     global connflag
     connflag = True
@@ -29,13 +27,13 @@ mqttc.on_message = on_message
 latitude = 12.9716
 longitude = 77.5946
 
-awshost = "a2e941l3hmci8-ats.iot.ap-south-1.amazonaws.com"
+awshost = "id-region.amazonaws.com"
 awsport = 8883
-clientId = "geocode"
-thingName = "geocode"
+clientId = "xxxx"
+thingName = "xxxx"
 caPath = "root-CA.crt"
-certPath = "geocode.cert.pem"
-keyPath = "geocode.private.key"
+certPath = "xxxx.cert.pem"
+keyPath = "xxxx.private.key"
 
 mqttc.tls_set(caPath, certfile=certPath, keyfile=keyPath, cert_reqs=ssl.CERT_REQUIRED, tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None)
 

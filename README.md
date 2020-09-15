@@ -52,13 +52,10 @@ Following are the resources -
 
 - Documentation
     - https://developer.here.com/documentation
-
 - Tutorials
     - https://developer.here.com/tutorials
-
 - Blogs 
     - https://developer.here.com/blog
-
 - Github
     - https://github.com/heremaps 
 

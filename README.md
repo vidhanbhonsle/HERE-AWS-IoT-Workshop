@@ -1,6 +1,8 @@
 # HERE AWS IoT Workshop
 
-Ever wondered on how we can add AI when it comes to location based services? In this code we upload pass an image to a Python Flask Application and get recommendation based on the food picture you have passed.
+Creating and sustaining an IoT ecosystem can be a complex task. One of the key challenges is to track assets and derive actionable insights from their location data. This can be achieved by leveraging the full power of modern map and location services.
+
+This repo will teach you how to integrate the location services and analytics in an IoT ecosystem consisting of an IoT edge device, AWS and user application.
 
 #### Sign up for AWS Cloud at https://aws.amazon.com 
 #### Get your HERE API Key at https://developer.here.com/events/NIPP

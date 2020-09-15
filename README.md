@@ -24,11 +24,13 @@ Check geocode_data_publish.py file
 install following Python library -
 - pip install paho-mqtt
 
-#### Step 3: Create a Subscriber code
+### Step 3: Create a Subscriber code
 
 Check flaskserver.py file
 
 install following Python library -
 - pip install Flask-MQTT
 - pip install Flask
+
+
 

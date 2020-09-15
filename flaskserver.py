@@ -37,6 +37,7 @@ def handle_mqtt_message(client, userdata, msg):
 @app.route('/')
 def index():
     return render_template('home.html')
+    
 @app.route('/getlatlng')
 def getlatlng_page():
     global lat, lng

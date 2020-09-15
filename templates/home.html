@@ -12,17 +12,39 @@
   </head>
   <body style='margin: 0'>    
     <h1>IoT User Dashboard</h1>
-    <div style="width: 100%; height: 100%" id="mapContainer"></div>
-    
-    <script>
-        
-      // Your current position
-      var myPosition = {lat: 12.95677, lng: 77.73164};
+    <div id="mapContainer" style="width: 90vw; height: 80vh; display: block; margin: 0 auto; border: solid 2px black; margin-top: 10px;" > </div>
+  <script>
+      var platform = new H.service.Platform({
+            apikey: "3nE7DOfp1k0tJ6YZrsGEDZeivEd6o57yFvirpYuNG4Y"   
+        });
+
+        // Obtain the default map types from the platform object:
+        var defaultLayers = platform.createDefaultLayers();
+
+        // Get your current position from wego.here.com
+        var myPosition = {lat: 12.95677, lng: 77.73164};
+
+        // Instantiate (and display) a map object:
+        var map = new H.Map(
+            document.getElementById('mapContainer'),
+            defaultLayers.vector.normal.map,
+            {
+                zoom: 11,
+                center: myPosition
+            });
+
+        var ui = H.ui.UI.createDefault(map, defaultLayers, 'en-US');
+        var mapEvents = new H.mapevents.MapEvents(map);
+        var behavior = new H.mapevents.Behavior(mapEvents);
+      
+        var homeIcon = new H.map.Icon('/static/home.png');
       
       var refreshDt = latlng => {
         //uri = "https://image.maps.ls.hereapi.com/mia/1.6/mapview?apiKey=eJtOWcz0rG2MovFXxmEZOBji86azNK035at5rNDx5xg&poi="+latlng+"&w="+1300+"&h="+600+"&z="+16
         //$('#mapContainer').attr('src', uri)
         console.log(latlng);
+        let marker = new H.map.Marker(latlng,{icon:homeIcon});
+        map.addObject(marker);
       };
 
       var refreshDtsct = _ => {
@@ -42,29 +64,6 @@
         refreshDtsct()
       }, 5000);
 
-var myMap = myPosition => {
-
-  var platform = new H.service.Platform({
-            apikey: "3nE7DOfp1k0tJ6YZrsGEDZeivEd6o57yFvirpYuNG4Y"   
-        });
-        
-        // Obtain the default map types from the platform object:
-        var defaultLayers = platform.createDefaultLayers();
-
-        // Instantiate (and display) a map object:
-        var map = new H.Map(
-            document.getElementById('mapContainer'),
-            defaultLayers.vector.normal.map,
-            {
-                zoom: 14,
-                center: myPosition
-            });
-
-        var ui = H.ui.UI.createDefault(map, defaultLayers, 'en-US');
-
-        var mapEvents = new H.mapevents.MapEvents(map);
-        var behavior = new H.mapevents.Behavior(mapEvents);
-};
     </script>
   </body>
 </html>

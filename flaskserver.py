@@ -1,6 +1,5 @@
 from flask import Flask,render_template
 from flask_mqtt import Mqtt
-
 import ssl
 import urllib.request as request
 

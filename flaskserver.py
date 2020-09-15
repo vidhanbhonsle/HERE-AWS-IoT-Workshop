@@ -3,7 +3,7 @@ from flask_mqtt import Mqtt
 
 import ssl
 import urllib.request as request
-# import threading
+
 app  = Flask(__name__)
 
 app.config['MQTT_BROKER_URL'] = 'a2e941l3hmci8-ats.iot.ap-south-1.amazonaws.com'

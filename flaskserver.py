@@ -6,14 +6,14 @@ import urllib.request as request
 
 app  = Flask(__name__)
 
-app.config['MQTT_BROKER_URL'] = 'a2e941l3hmci8-ats.iot.ap-south-1.amazonaws.com'
+app.config['MQTT_BROKER_URL'] = 'id-region.amazonaws.com'
 app.config['MQTT_BROKER_PORT'] = 8883
-app.config['MQTT_CLIENT_ID'] = "geocode"
+app.config['MQTT_CLIENT_ID'] = "xxxx"
 app.config['MQTT_KEEPALIVE'] = 60
 app.config['MQTT_TLS_ENABLED'] = True
 app.config['MQTT_TLS_CA_CERTS'] = "root-CA.crt"
-app.config['MQTT_TLS_CERTFILE'] = "geocode.cert.pem"
-app.config['MQTT_TLS_KEYFILE'] = "geocode.private.key"
+app.config['MQTT_TLS_CERTFILE'] = "xxxx.cert.pem"
+app.config['MQTT_TLS_KEYFILE'] = "xxxx.private.key"
 app.config['MQTT_TLS_CIPHERS'] = None
 app.config['MQTT_TLS_CERT_REQS'] = ssl.CERT_REQUIRED
 app.config['MQTT_TLS_VERSION'] = ssl.PROTOCOL_TLSv1_2
@@ -46,4 +46,3 @@ def getlatlng_page():
 
 if __name__ == '__main__':
     app.run( use_reloader=False, debug=True)
-
